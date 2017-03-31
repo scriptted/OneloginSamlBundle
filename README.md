@@ -36,6 +36,9 @@ Configuration
 Configure SAML metadata in `app/config/config.yml`. Check https://github.com/onelogin/php-saml#settings for more info.
 ``` yml
 hslavich_onelogin_saml:
+    # DiscoveryService settings
+    dd:
+        url: 'https://discovery.renater.fr/test'
     # Basic settings
     idp:
         entityId: 'http://id.example.com/saml2/idp/metadata.php'
@@ -57,7 +60,7 @@ hslavich_onelogin_saml:
     # Optional settings
     security:
         nameIdEncrypted:       false
-        authnRequestsSigned:   false
+        authnRequestsSigned:   true
         logoutRequestSigned:   false
         logoutResponseSigned:  false
         wantMessagesSigned:    false

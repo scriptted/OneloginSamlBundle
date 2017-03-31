@@ -5,6 +5,10 @@ services:
         class: OneLogin_Saml2_Auth
         arguments: [ "%hslavich_onelogin_saml.settings%"]
 
+    hslavich_onelogin_saml.idp_metadata:
+        class: Hslavich\OneloginSamlBundle\Service\IDPMetadataService
+        arguments: ["@service_container"]
+
     hslavich_onelogin_saml.user_provider:
         class: Hslavich\OneloginSamlBundle\Security\User\SamlUserProvider
 
